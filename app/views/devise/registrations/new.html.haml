@@ -6,8 +6,24 @@
     %br/
     = f.email_field :email, autofocus: true
   .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name, autofocus: true
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name, autofocus: true
+  %div
+    = f.label :gender
+    %br/
+    = f.select :gender, User::GENDER,prompt: true
+  .field
+    = f.label :image
+    %br/
+    = f.file_field :picture
+  .field
     = f.label :password
-    - if @minimum_password_length
+    - if @validatable
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
