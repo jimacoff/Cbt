@@ -18,9 +18,9 @@
     %br/
     = f.select :gender, User::GENDER,prompt: true
   .field
-    = f.label :image
+    = f.label :image, autofocus: true
     %br/
-    = f.file_field :picture
+    = f.file_field :image
   .field
     = f.label :password
     - if @validatable
